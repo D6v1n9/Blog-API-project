@@ -35,8 +35,6 @@ let posts = [
 let lastId = 3;
 
 // Middleware
-app.use(express.static("public"));
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -47,6 +45,15 @@ app.get("/posts", (req,res) => {
 })
 
 //STEP 2: GET a specific post by id
+
+app.get("/posts/:id", (req,res) => {
+  const id = parseInt(req.params.id) ;
+  const present = posts.find((post) => post.id === id) ;
+  if(present) {
+    res.json(present);
+  }
+  res.status(404).json({message: "Post not found"});
+})
 
 //STEP 3: POST a new post
 
