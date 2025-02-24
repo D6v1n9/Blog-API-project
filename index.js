@@ -40,6 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //STEP 1: GET All posts
 
+
 //STEP 2: GET a specific post by id
 
 //STEP 3: POST a new post
