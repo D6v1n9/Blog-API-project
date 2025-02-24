@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 4000;
+const port = 4000; // API 
 
 // In-memory data store
 let posts = [
@@ -38,17 +38,15 @@ let lastId = 3;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//Write your code here//
+//STEP 1: GET All posts
 
-//CHALLENGE 1: GET All posts
+//STEP 2: GET a specific post by id
 
-//CHALLENGE 2: GET a specific post by id
+//STEP 3: POST a new post
 
-//CHALLENGE 3: POST a new post
+//STEP 4: PATCH a post when you just want to update one parameter
 
-//CHALLENGE 4: PATCH a post when you just want to update one parameter
-
-//CHALLENGE 5: DELETE a specific post by providing the post id.
+//STEP 5: DELETE a specific post by providing the post id.
 
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
