@@ -57,6 +57,19 @@ app.get("/posts/:id", (req,res) => {
 
 //STEP 3: POST a new post
 
+app.post("/posts", (req,res) => {
+  const newPost = {
+    id: lastId+1,
+    title: req.body.title,
+    content: req.body.content,
+    author: req.body.author,
+    date: new Date(),
+  }
+  lastId = lastId+1;
+  posts.push(newPost);
+  res.status(201).json(posts);
+}) 
+
 //STEP 4: PATCH a post when you just want to update one parameter
 
 //STEP 5: DELETE a specific post by providing the post id.
